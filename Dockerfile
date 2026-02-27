@@ -41,7 +41,7 @@ ENV RAZORPAY_KEY_ID=dummy_key
 ENV RAZORPAY_KEY_SECRET=dummy_secret
 
 # 4. Create Entrypoint Script
-# This starts MySQL, creates the database, and then runs our Java app and Frontend serve
+# This starts MySQL, creates the database, and then runs our Java app and Frontend server
 RUN echo '#!/bin/bash\n\
     service mysql start\n\
     sleep 5\n\
