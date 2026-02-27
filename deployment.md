@@ -29,6 +29,19 @@ graph TD
 
 ---
 
+## 🦄 Standalone Option: Monolithic Dockerfile
+
+If you want to run the entire project (MySQL + Backend + Frontend) as a single container without using `docker-compose` or `k8s`, I have provided a root-level `Dockerfile`.
+
+**To build and run the single image:**
+
+```bash
+docker build -t organica-all-in-one .
+docker run -d -p 3000:3000 -p 8080:8080 organica-all-in-one
+```
+
+---
+
 ## 🛠️ Step 1: Preparation & Tooling
 
 Before deploying, ensure your local environment is ready.
