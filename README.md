@@ -58,9 +58,9 @@ sequenceDiagram
 
 ---
 
-## 🚀 2. Quick Start Guide (The Docker Way)
+## 🚀 2. Quick Start Guide (The Standalone Way)
 
-The most efficient way to run the entire stack is using **Docker Compose**. This ensures identical environments across different machines.
+The most efficient way to run the entire stack is using the root-level **Monolithic Dockerfile**. This bundles the Frontend, Backend, and MySQL into a single container.
 
 ### Prerequisites
 
@@ -76,29 +76,22 @@ The most efficient way to run the entire stack is using **Docker Compose**. This
    cd Organica
    ```
 
-2. **Configuration**
-   Open `docker-compose.yml` and ensure your keys are set (currently using placeholders for testing):
-
-   ```yaml
-   RAZORPAY_KEY_ID: dummy_key
-   RAZORPAY_KEY_SECRET: dummy_secret
-   ```
-
-3. **Launch the Application**
+2. **Launch the Application**
 
    ```bash
-   # Build images and start containers in detached mode
-   docker compose up --build -d
+   # Build the all-in-one image and start the container
+   docker build -t organica-app .
+   docker run -d -p 3000:3000 -p 8080:8080 --name organica-live organica-app
    ```
 
-4. **Verify Deployment**
+3. **Verify Deployment**
    ```bash
-   docker compose ps
+   docker ps
    ```
    **Access Ports:**
    - **Frontend:** [http://localhost:3000](http://localhost:3000)
-   - **Backend API:** [http://localhost:9090](http://localhost:9090)
-   - **MySQL:** Port 3306
+   - **Backend API:** [http://localhost:8080](http://localhost:8080)
+   - **MySQL:** Internal to the container
 
 ---
 
@@ -135,7 +128,7 @@ To protect a specific route, modify `SecurityConfiguration.java`:
 We use **Spring Data JPA**. To Add a new database field:
 
 1. Update the **Entity** class.
-2. The `SPRING_JPA_HIBERNATE_DDL_AUTO: update` setting in `docker-compose.yml` will automatically update your MySQL tables.
+2. The `SPRING_JPA_HIBERNATE_DDL_AUTO: update` setting in the `Dockerfile` will automatically update your MySQL tables.
 
 #### 3. Handling API Requests from Frontend
 
@@ -146,7 +139,7 @@ The frontend uses a centralized `Axios.js` helper.
 ```javascript
 // Located in Client/src/Helper/Axios.js
 const response = await axios.request({
-  url: "http://localhost:9090/product/", // Backend URL
+  url: "http://localhost:8080/product/", // Backend URL (Inside monolith)
   method: "GET",
   headers: {
     Authorization: `Bearer ${token}`, // Token-based Auth
@@ -178,15 +171,15 @@ npm start
 
 ---
 
-## 🛑 5. Maintenance & Troubleshooting
-
 ### Resetting the Environment
 
 If you face data issues or want a clean start:
 
 ```bash
-docker compose down -v  # WARNING: deletes database volume
-docker compose up --build -d
+docker stop organica-live
+docker rm organica-live
+docker build -t organica-app .
+docker run -d -p 3000:3000 -p 8080:8080 --name organica-live organica-app
 ```
 
 ### Checking Backend Health
@@ -194,7 +187,7 @@ docker compose up --build -d
 Check if the backend is successfully connected to MySQL:
 
 ```bash
-docker logs organica-backend-1 | grep "Started OrganicaApplication"
+docker logs organica-live | grep "Started OrganicaApplication"
 ```
 
 ---
@@ -221,7 +214,7 @@ docker logs organica-backend-1 | grep "Started OrganicaApplication"
 | **ORM**                | **Spring Data JPA / Hibernate** | Simplified database operations and automated schema management.            |
 | **State Management**   | **React Hooks**                 | Managing local and global UI state (useState, useEffect).                  |
 | **API Client**         | **Axios**                       | Handling HTTP requests from the frontend to the backend.                   |
-| **Containerization**   | **Docker & Docker Compose**     | Consistent environment and simplified multi-container deployment.          |
+| **Containerization**   | **Docker**                      | Single optimized Dockerfile for monolithic deployment.                     |
 | **Payment Gateway**    | **Razorpay**                    | Secure integration for processing online transactions.                     |
 | **Build Tools**        | **Maven & NPM**                 | Dependency management and build automation for Java and Node.js.           |
 | **Styling**            | **Vanilla CSS3 & FontAwesome**  | Premium aesthetics with modern iconography.                                |

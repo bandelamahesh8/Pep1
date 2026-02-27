@@ -31,7 +31,7 @@ graph TD
 
 ## 🦄 Standalone Option: Monolithic Dockerfile
 
-If you want to run the entire project (MySQL + Backend + Frontend) as a single container without using `docker-compose` or `k8s`, I have provided a root-level `Dockerfile`.
+If you want to run the entire project (MySQL + Backend + Frontend) as a single container without using `k8s`, I have provided a root-level `Dockerfile`.
 
 **To build and run the single image:**
 
