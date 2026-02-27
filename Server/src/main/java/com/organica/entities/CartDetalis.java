@@ -1,6 +1,5 @@
 package com.organica.entities;
 
-
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,9 +25,4 @@ public class CartDetalis {
 
     @ManyToOne
     private Cart cart;
-
-
-
-
-
 }

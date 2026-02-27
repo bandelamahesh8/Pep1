@@ -1,1 +1,13 @@
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
+.terraform.lock.hcl
+*.exe
+*.log
+target/
+build/
+node_modules/
 .vscode/
+.idea/
+*.class
+.DS_Store
