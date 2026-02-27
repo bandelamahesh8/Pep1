@@ -1,5 +1,6 @@
 # 🌿 Organica: Full-Stack Organic E-Commerce Platform
 #This is full stack project
+
 Organica is a professional-grade, full-stack e-commerce solution built with **React**, **Spring Boot**, and **MySQL**. This platform is designed for high performance, security (JWT), and seamless scalability using Docker containerization.
 
 ---
