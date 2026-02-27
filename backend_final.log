@@ -1,0 +1,34 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.0)
+
+2026-02-27T06:45:30.408Z  INFO 1 --- [           main] com.organica.OrganicaApplication         : Starting OrganicaApplication v0.0.1-SNAPSHOT using Java 17.0.18 with PID 1 (/app/myapp.jar started by root in /app)
+2026-02-27T06:45:30.411Z  INFO 1 --- [           main] com.organica.OrganicaApplication         : No active profile set, falling back to 1 default profile: "default"
+2026-02-27T06:45:31.370Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-02-27T06:45:31.482Z  INFO 1 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 4 JPA repository interfaces.
+2026-02-27T06:45:32.506Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2026-02-27T06:45:32.518Z  INFO 1 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-02-27T06:45:32.518Z  INFO 1 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2026-02-27T06:45:32.603Z  INFO 1 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-02-27T06:45:32.604Z  INFO 1 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2106 ms
+2026-02-27T06:45:32.853Z  INFO 1 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-02-27T06:45:32.986Z  INFO 1 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.2.Final
+2026-02-27T06:45:32.994Z  INFO 1 --- [           main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2026-02-27T06:45:33.181Z  INFO 1 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2026-02-27T06:45:33.346Z  INFO 1 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-02-27T06:45:33.383Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-02-27T06:45:33.889Z  INFO 1 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@54da32dc
+2026-02-27T06:45:33.891Z  INFO 1 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-02-27T06:45:33.981Z  INFO 1 --- [           main] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 8.0.45
+2026-02-27T06:45:34.492Z  INFO 1 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2026-02-27T06:45:35.215Z  INFO 1 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2026-02-27T06:45:35.717Z  INFO 1 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-02-27T06:45:36.370Z  WARN 1 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-02-27T06:45:36.743Z  INFO 1 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2b916808, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@62f11ebb, org.springframework.security.web.context.SecurityContextHolderFilter@67b355c8, org.springframework.security.web.header.HeaderWriterFilter@18d003cd, org.springframework.security.web.authentication.logout.LogoutFilter@72a2312e, com.organica.config.JwtAuthenticationFilter@2b38b1f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@91f565d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b83459e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@a6c54c3, org.springframework.security.web.session.SessionManagementFilter@f2a1813, org.springframework.security.web.access.ExceptionTranslationFilter@f438904, org.springframework.security.web.access.intercept.AuthorizationFilter@21bd128b]
+2026-02-27T06:45:37.066Z  INFO 1 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2026-02-27T06:45:37.099Z  INFO 1 --- [           main] com.organica.OrganicaApplication         : Started OrganicaApplication in 7.095 seconds (process running for 7.93)
